@@ -21,12 +21,14 @@
       </b-row>
       <hr/>
       <b-row>
-        <b-col cols='6' offset='1'>
-          <GroupButtons @clicked="onClickButtonList" :currentFilter='currentButton' :listButtons='buttons' />
-          <ObjectTable :currentField='fields' :currentItems='items' />
+        <b-col cols='10'>
+          <h1>Il y a 15 photos pour l'année 1931</h1>
         </b-col>
-        <b-col cols='4'>
-          <ActionCards/>
+        <b-col cols='8' offset='1'>
+          <ImagesList :currentItems='filteredItems' />
+        </b-col>
+        <b-col cols='2'>
+          <FiltersSide @clicked="onClickUpdateFilters"/>
         </b-col>
       </b-row>
     </b-container>
@@ -37,9 +39,8 @@
 <script>
   import SearchInputSecondary   from '../../components/SearchInputSecondary.vue'
   import NavBarSecondary        from '../../components/NavBarSecondary.vue'
-  import GroupButtons           from '../../components/GroupButtons.vue'
-  import ObjectTable            from '../../components/ObjectTable.vue'
-  import ActionCards            from '../../components/ActionCards.vue'
+  import ImagesList             from '../../components/ImagesList.vue'
+  import FiltersSide            from '../../components/FiltersSide.vue'
   import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
 
   export default {
@@ -47,68 +48,218 @@
     components: {
       SearchInputSecondary,
       NavBarSecondary,
-      GroupButtons,
-      ObjectTable,
-      ActionCards,
+      ImagesList,
+      FiltersSide,
       ModalAddPhoto
     },
     data() {
       return {
-        buttons: [
-          { key: 'year', label: 'Par année', state: true },
-          { key: 'place', label: 'Par lieu', state: false },
-          { key: 'person', label: 'Par personne', state: false }
+        currentFilters: [
+          {
+            type: 'person',
+            value: []
+          },
+          {
+            type: 'place',
+            value: []
+          }
         ],
-        currentButton: 'year',
-        fields: [
-          { key: 'date',     label: 'Date', sortable: true },
-          { key: 'nb_image', label: 'Nombre de photo', sortable: true }
+        allItems: [
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/237/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'Vue depuis la Trump Tower.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/238/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'Une super plante.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/239/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/240/400/400',
+            place: 'tokyo'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/241/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/242/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/243/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/244/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/247/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/248/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/249/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/250/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/251/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/252/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/253/400/400',
+            place: 'mexico_city'
+          }
         ],
-        items: [
-          { date: 1931, nb_image: 1 },
-          { date: 1984, nb_image: 24 },
-          { date: 2011, nb_image: 51 },
-          { date: 2020, nb_image: 74 }
+        filteredItems: [
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/237/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'Vue depuis la Trump Tower.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/238/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'Une super plante.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/239/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/240/400/400',
+            place: 'tokyo'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/241/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/242/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/243/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/244/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/247/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/248/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/249/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/250/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/251/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/252/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A New-York (1931)",
+            src: 'https://picsum.photos/id/253/400/400',
+            place: 'mexico_city'
+          }
         ]
       };
     },
     methods: {
-      onClickButtonList (newKey) {
-        this.currentButton = newKey;
-        if (this.currentButton == 'year') {
-          this.fields = [
-            { key: 'date',     label: 'Date', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
-          ];
-          this.items = [
-            { date: 1931, nb_image: 1 },
-            { date: 1984, nb_image: 24 },
-            { date: 2011, nb_image: 51 },
-            { date: 2020, nb_image: 74 }
-          ];
-        } else if (this.currentButton == 'place') {
-          this.fields = [
-            { key: 'place',    label: 'Lieu', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
-          ];
-          this.items = [
-            { place: 'Alger',    nb_image: 121 },
-            { place: 'Londre',   nb_image: 224 },
-            { place: 'Paris',    nb_image: 23 },
-            { place: 'Toulouse', nb_image: 34 }
-          ];
-        } else if (this.currentButton == 'person') {
-          this.fields = [
-            { key: 'person',   label: 'Personne', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
-          ];
-          this.items = [
-            { person: 'Jean-françois Foubert', nb_image: 15 },
-            { person: 'Marie-Pierre Lu',       nb_image: 12 },
-            { person: 'Dominique Godfrey',     nb_image: 24 },
-            { person: 'Véronique Marcorelle',  nb_image: 22 }
-          ];
+      onClickUpdateFilters (newFilters) {
+        this.currentFilters[newFilters['type']] = newFilters['value'];
+        const temp = [];
+        for(let i = 0; i < this.allItems.length; i++) {
+          if (this.currentFilters['place'].indexOf(this.allItems[i]['place']) !== -1) {
+            temp.push(this.allItems[i]);
+          }
         }
+        this.filteredItems = temp;
       }
     }
   }
