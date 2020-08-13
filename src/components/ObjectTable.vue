@@ -1,5 +1,6 @@
 <template>
   <div>
+    <b-button href="/photos_year.html" variant="primary">Par année exemple</b-button>
     <b-table striped hover :items="updateItem" :fields="updateField"></b-table>
   </div>
 </template>

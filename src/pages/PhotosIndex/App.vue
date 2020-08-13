@@ -1,8 +1,24 @@
 <template>
   <div id="app">
     <b-container fluid>
-      <SearchInputSecondary/>
-      <NavBarSecondary />
+      <!--TODO: ADD THIS IN ITMHeaderIndex component-->
+      <b-row align-v="end">
+        <b-col cols='2'>
+          <img src="../../assets/logo_test.png" alt='marco_photo' />
+        </b-col>
+        <b-col cols='10'>
+          <b-row>
+            <b-col cols='7'>
+              <SearchInputSecondary/>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col cols='7'>
+              <NavBarSecondary />
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
       <hr/>
       <b-row>
         <b-col cols='6' offset='1'>
@@ -14,6 +30,7 @@
         </b-col>
       </b-row>
     </b-container>
+    <ModalAddPhoto/>
   </div>
 </template>
 
@@ -23,15 +40,17 @@
   import GroupButtons           from '../../components/GroupButtons.vue'
   import ObjectTable            from '../../components/ObjectTable.vue'
   import ActionCards            from '../../components/ActionCards.vue'
+  import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
 
   export default {
-    name: 'Photos',
+    name: 'PhotosIndex',
     components: {
       SearchInputSecondary,
       NavBarSecondary,
       GroupButtons,
       ObjectTable,
-      ActionCards
+      ActionCards,
+      ModalAddPhoto
     },
     data() {
       return {
@@ -102,6 +121,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 2em;
 }
 </style>

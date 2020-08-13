@@ -18,7 +18,7 @@
         footer-tag="footer"
       >
         <b-card-text>Header and footers using slots.</b-card-text>
-        <b-button href="#" variant="primary">Ajouter une photo</b-button>
+        <b-button variant="primary" v-b-modal.modal-1>Ajouter une photo</b-button>
       </b-card>
     </b-card-group>
   </div>

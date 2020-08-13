@@ -1,28 +1,24 @@
 <template>
-  <b-row>
-    <b-col cols='5'>
-      <div class='search-wrapper'>
-        <b-form>
-          <label class="sr-only" for="inline-form-input-name">Rechercher vos photos</label>
-          <b-input-group>
-            <b-form-input></b-form-input>
-            <b-input-group-append>
-              <b-button variant="info">Rechercher</b-button>
-            </b-input-group-append>
-            <b-button variant="outline-secondary" class='ml-2' v-on:click='showAdvancedOptions'>Recherche avancée</b-button>
-          </b-input-group>
-          <b-row v-if='showAdvanced' class='advanced-research'>
-            <b-col cols='6'>
-              <b-form-select v-model="placeSelected" :options="placeOptions"></b-form-select>
-            </b-col>
-            <b-col cols='6'>
-              <b-form-select v-model="dateSelected" :options="dateOptions"></b-form-select>
-            </b-col>
-          </b-row>
-        </b-form>
-      </div>
-    </b-col>
-  </b-row>
+  <div class='search-wrapper'>
+    <b-form>
+      <label class="sr-only" for="inline-form-input-name">Rechercher vos photos</label>
+      <b-input-group>
+        <b-form-input></b-form-input>
+        <b-input-group-append>
+          <b-button variant="info">Rechercher</b-button>
+        </b-input-group-append>
+        <b-button variant="outline-secondary" class='ml-2' v-on:click='showAdvancedOptions'>Recherche avancée</b-button>
+      </b-input-group>
+      <b-row v-if='showAdvanced' class='advanced-research'>
+        <b-col cols='6'>
+          <b-form-select v-model="placeSelected" :options="placeOptions"></b-form-select>
+        </b-col>
+        <b-col cols='6'>
+          <b-form-select v-model="dateSelected" :options="dateOptions"></b-form-select>
+        </b-col>
+      </b-row>
+    </b-form>
+  </div>
 </template>
 
 <script>
