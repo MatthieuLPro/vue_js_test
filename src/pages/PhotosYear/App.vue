@@ -67,91 +67,91 @@
         allItems: [
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/237/400/400',
             place: 'paris'
           },
           {
             title: 'Vue depuis la Trump Tower.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/238/400/400',
             place: 'mexico_city'
           },
           {
             title: 'Une super plante.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/239/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Tokyo (1931)",
             src: 'https://picsum.photos/id/240/400/400',
             place: 'tokyo'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/241/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/242/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/243/400/400',
             place: 'mexico_city'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/244/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/247/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/248/400/400',
             place: 'mexico_city'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/249/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/250/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/251/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/252/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/253/400/400',
             place: 'mexico_city'
           }
@@ -159,91 +159,91 @@
         filteredItems: [
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/237/400/400',
             place: 'paris'
           },
           {
             title: 'Vue depuis la Trump Tower.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/238/400/400',
             place: 'mexico_city'
           },
           {
             title: 'Une super plante.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/239/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Tokyo (1931)",
             src: 'https://picsum.photos/id/240/400/400',
             place: 'tokyo'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/241/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/242/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/243/400/400',
             place: 'mexico_city'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/244/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/247/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/248/400/400',
             place: 'mexico_city'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/249/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/250/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/251/400/400',
             place: 'helsinki'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Paris (1931)",
             src: 'https://picsum.photos/id/252/400/400',
             place: 'paris'
           },
           {
             title: 'John Jacks le chien de Paula.',
-            description: "A New-York (1931)",
+            description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/253/400/400',
             place: 'mexico_city'
           }
@@ -259,7 +259,7 @@
             temp.push(this.allItems[i]);
           }
         }
-        this.filteredItems = temp;
+        this.filteredItems = temp.length > 0 ? temp : this.allItems;
       }
     }
   }
