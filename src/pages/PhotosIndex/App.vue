@@ -61,15 +61,15 @@
         ],
         currentButton: 'year',
         fields: [
-          { key: 'date',     label: 'Date', sortable: true },
+          { key: 'date', label: 'Date', sortable: true },
           { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-          { key: 'actions', label: 'Actions' }
+          { key: 'actions', label: 'MyAction' }
         ],
         items: [
-          { date: 1931, nb_image: 1 },
-          { date: 1984, nb_image: 24 },
-          { date: 2011, nb_image: 51 },
-          { date: 2020, nb_image: 74 }
+          { date: 1931, nb_image: 1, action: 'act_1931' },
+          { date: 1984, nb_image: 24, action: 'act_1984' },
+          { date: 2011, nb_image: 51, action: 'act_2011' },
+          { date: 2020, nb_image: 74, action: 'act_2020' }
         ],
         lastItems: [
           {
@@ -128,30 +128,33 @@
         this.currentButton = newKey;
         if (this.currentButton == 'year') {
           this.fields = [
-            { key: 'date',     label: 'Date', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
+            { key: 'date', label: 'Date', sortable: true },
+            { key: 'nb_image', label: 'Nombre de photo', sortable: true },
+            { key: 'action', label: 'MyAction' }
           ];
           this.items = [
-            { date: 1931, nb_image: 1 },
-            { date: 1984, nb_image: 24 },
-            { date: 2011, nb_image: 51 },
-            { date: 2020, nb_image: 74 }
+            { date: 1931, nb_image: 1, action: 'act_1931' },
+            { date: 1984, nb_image: 24, action: 'act_1984' },
+            { date: 2011, nb_image: 51, action: 'act_2011' },
+            { date: 2020, nb_image: 74, action: 'act_2020' }
           ];
         } else if (this.currentButton == 'place') {
           this.fields = [
-            { key: 'place',    label: 'Lieu', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
+            { key: 'place', label: 'Lieu', sortable: true },
+            { key: 'nb_image', label: 'Nombre de photo', sortable: true },
+            { key: 'action', label: 'MyAction' }
           ];
           this.items = [
-            { place: 'Alger',    nb_image: 121 },
-            { place: 'Londre',   nb_image: 224 },
-            { place: 'Paris',    nb_image: 23 },
+            { place: 'Alger', nb_image: 121 },
+            { place: 'Londre', nb_image: 224 },
+            { place: 'Paris', nb_image: 23 },
             { place: 'Toulouse', nb_image: 34 }
           ];
         } else if (this.currentButton == 'person') {
           this.fields = [
-            { key: 'person',   label: 'Personne', sortable: true },
-            { key: 'nb_image', label: 'Nombre de photo', sortable: true }
+            { key: 'person', label: 'Personne', sortable: true },
+            { key: 'nb_image', label: 'Nombre de photo', sortable: true },
+            { key: 'action', label: 'MyAction' }
           ];
           this.items = [
             { person: 'Jean-françois Foubert', nb_image: 15 },

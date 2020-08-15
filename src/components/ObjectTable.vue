@@ -3,14 +3,13 @@
     <b-table striped hover
       :items="updateItems"
       :fields="updateFields">
-      <template v-slot:row-details="row">
-        <!-- TODO: FIXMED -->
-        <p>{{row.item}}</p>
-        <!--<b-card>
-          <ul>
-            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
-          </ul>
-        </b-card>-->
+      <template v-slot:cell(actions)="row">
+        <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
+          Voir les photos
+        </b-button>
+        <!--<b-button size="sm" @click="row.toggleDetails">
+          {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+        </b-button>-->
       </template>
     </b-table>
   </div>
