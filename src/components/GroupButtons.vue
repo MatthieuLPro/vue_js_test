@@ -1,5 +1,5 @@
 <template>
-  <div class='groupButton'>
+  <div class='group-button'>
     <b-button-group>
         <b-button
           v-for='button in currentList'
@@ -9,7 +9,10 @@
         >
           {{ button.label }}
         </b-button>
-  </b-button-group>
+    </b-button-group>
+    <!-- Need to change -->
+    <b-button href="/photos_year.html" variant="info">Par année exemple</b-button>
+    <b-button variant="info" v-b-modal.modal-1>+</b-button>
   </div>
 </template>
 
@@ -40,7 +43,7 @@
 </script>
 
 <style scoped>
-  .groupButton {
+  .group-button {
     text-align: left;
   }
   table {

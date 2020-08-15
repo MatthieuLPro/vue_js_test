@@ -26,7 +26,7 @@
           <ObjectTable :currentField='fields' :currentItems='items' />
         </b-col>
         <b-col cols='4'>
-          <ActionCards/>
+          <ActionCards :currentItems='lastItems' :currentItemsToShow='lastItems.slice(0, 4)' />
         </b-col>
       </b-row>
     </b-container>
@@ -62,13 +62,64 @@
         currentButton: 'year',
         fields: [
           { key: 'date',     label: 'Date', sortable: true },
-          { key: 'nb_image', label: 'Nombre de photo', sortable: true }
+          { key: 'nb_image', label: 'Nombre de photo', sortable: true },
+          { key: 'actions', label: 'Actions' }
         ],
         items: [
           { date: 1931, nb_image: 1 },
           { date: 1984, nb_image: 24 },
           { date: 2011, nb_image: 51 },
           { date: 2020, nb_image: 74 }
+        ],
+        lastItems: [
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Paris (1931)",
+            src: 'https://picsum.photos/id/261/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'Vue depuis la Trump Tower.',
+            description: "A Mexico city (1931)",
+            src: 'https://picsum.photos/id/267/400/400',
+            place: 'mexico_city'
+          },
+          {
+            title: 'Une super plante.',
+            description: "A Helsinki (1931)",
+            src: 'https://picsum.photos/id/263/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Tokyo (1931)",
+            src: 'https://picsum.photos/id/264/400/400',
+            place: 'tokyo'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Paris (1931)",
+            src: 'https://picsum.photos/id/266/400/400',
+            place: 'paris'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Paris (1931)",
+            src: 'https://picsum.photos/id/268/400/400',
+            place: 'helsinki'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Paris (1931)",
+            src: 'https://picsum.photos/id/269/400/400',
+            place: 'tokyo'
+          },
+          {
+            title: 'John Jacks le chien de Paula.',
+            description: "A Paris (1931)",
+            src: 'https://picsum.photos/id/270/400/400',
+            place: 'paris'
+          }
         ]
       };
     },
