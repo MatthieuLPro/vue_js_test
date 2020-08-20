@@ -8,7 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faImage, faVideo, faCalendarAlt, faFileAlt, faTree } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faImage, faVideo, faCalendarAlt, faFileAlt, faTree, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faHome)
@@ -17,6 +17,7 @@ library.add(faVideo)
 library.add(faFileAlt)
 library.add(faCalendarAlt)
 library.add(faTree)
+library.add(faSearch)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

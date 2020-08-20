@@ -5,9 +5,11 @@
       <b-input-group>
         <b-form-input></b-form-input>
         <b-input-group-append>
-          <b-button variant="info">Rechercher</b-button>
+          <b-button variant="info" class="button-search-text">Rechercher</b-button>
+          <b-button variant="info" class="button-search-icon"><font-awesome-icon icon="search"/></b-button>
         </b-input-group-append>
-        <b-button variant="outline-secondary" class='ml-2' v-on:click='showAdvancedOptions'>Recherche avancée</b-button>
+        <b-button variant="outline-secondary" class='ml-2 button-search-plus-text' v-on:click='showAdvancedOptions'>Recherche avancée</b-button>
+        <b-button variant="outline-secondary" class='ml-2 button-search-plus-icon' v-on:click='showAdvancedOptions'>+</b-button>
       </b-input-group>
       <b-row v-if='showAdvanced' class='advanced-research'>
         <b-col cols='6'>
@@ -58,5 +60,35 @@ export default {
 <style>
 .search-wrapper {
   margin-bottom:  1em;
+}
+.button-search-text {
+  display: block !important;
+}
+.button-search-icon {
+  display: none !important;
+}
+.button-search-plus-text {
+  display: block !important;
+}
+.button-search-plus-icon {
+  display: none !important;
+}
+@media screen and (max-width: 768px)
+{
+  .button-search-text {
+    display: none !important;
+  }
+  .button-search-icon {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 576px)
+{
+  .button-search-plus-text {
+    display: none !important;
+  }
+  .button-search-plus-icon {
+    display: block !important;
+  }
 }
 </style>

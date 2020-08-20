@@ -4,7 +4,7 @@
       <label class="sr-only" for="inline-form-input-name">Rechercher vos photos</label>
       <b-input-group>
         <b-form-input></b-form-input>
-        <b-input-group-append>
+        <b-input-group-append >
           <b-button variant="info">Rechercher</b-button>
         </b-input-group-append>
       </b-input-group>

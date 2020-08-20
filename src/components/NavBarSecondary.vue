@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="sm" type="light" variant="transparent">
     <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-    <b-collapse id="nav-text-collapse" is-nav>
+    <b-collapse id="nav-text-collapse" class='navbar-small-collapse' is-nav>
       <b-navbar-nav class='mr-4'>
         <a href="/index.html">
           <b-nav-text><font-awesome-icon icon="home"/> Home</b-nav-text>
@@ -72,5 +72,26 @@
 <style>
   .selected {
     color: red !important;
+  }
+  .navbar-small-collapse {
+    background-color: transparent;
+  }
+  @media screen and (max-width: 576px)
+  {
+    .navbar-small-collapse {
+      position: fixed !important;
+      top: 10em !important;
+      left: 0 !important;
+      right: 0 !important;
+      background-color: rgba(255, 255, 255, 1) !important;
+      z-index: 1999999987 !important;
+      text-align: left;
+      margin-left: 1px;
+      padding-left: 2em;
+      width: 12em;
+      border-top: 1px solid rgba(56, 114, 38, 0.28);
+      border-right: 1px solid rgba(56, 114, 38, 0.28);
+      border-bottom: 1px solid rgba(56, 114, 38, 0.28);
+    }
   }
 </style>
