@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <b-container fluid>
-      <ITMHeaderIndex :currentPage="currentPage" />
+      <ITMHeaderIndex :currentPage="currentPage"/>
       <b-row>
-        <b-col cols='12' md='12' lg='6' offset-lg='1'>
+        <b-col cols='6' offset='1'>
           <GroupButtons @clicked="onClickButtonList" :currentFilter='currentButton' :listButtons='buttons' />
           <ObjectTable :currentField='fields' :currentItems='items' />
         </b-col>
-        <b-col cols='12' md='12' lg='4'>
+        <b-col cols='4'>
           <ActionCards :currentItems='lastItems' :currentItemsToShow='lastItems.slice(0, 4)' />
         </b-col>
       </b-row>
@@ -34,7 +34,7 @@
     },
     data() {
       return {
-        currentPage: 'photo',
+        currentPage: 'video',
         buttons: [
           { key: 'year', label: 'Par année', state: true },
           { key: 'place', label: 'Par lieu', state: false },

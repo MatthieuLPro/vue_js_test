@@ -1,33 +1,15 @@
 <template>
   <div id="app">
     <b-container fluid>
-      <!--TODO: ADD THIS IN ITMHeaderIndex component-->
-      <b-row align-v="end">
-        <b-col cols='2'>
-          <img src="../../assets/logo_test.png" alt='marco_photo' />
-        </b-col>
-        <b-col cols='10'>
-          <b-row>
-            <b-col cols='7'>
-              <SearchInputSecondary/>
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col cols='7'>
-              <NavBarSecondary />
-            </b-col>
-          </b-row>
-        </b-col>
-      </b-row>
-      <hr/>
+      <ITMHeaderIndex/>
       <b-row>
-        <b-col cols='10'>
+        <b-col cols='10' md='12' lg='10'>
           <h1>Il y a 15 photos pour l'année 1931</h1>
         </b-col>
-        <b-col cols='8' offset='1'>
+        <b-col cols='8' offset='1' md='6' lg='8' offset-lg='1'>
           <ImagesList :currentItems='filteredItems' />
         </b-col>
-        <b-col cols='2'>
+        <b-col cols='2' md='4' lg='2'>
           <FiltersSide @clicked="onClickUpdateFilters"/>
         </b-col>
       </b-row>
@@ -37,8 +19,7 @@
 </template>
 
 <script>
-  import SearchInputSecondary   from '../../components/SearchInputSecondary.vue'
-  import NavBarSecondary        from '../../components/NavBarSecondary.vue'
+  import ITMHeaderIndex         from '../../components/ITMHeaderIndex.vue'
   import ImagesList             from '../../components/ImagesList.vue'
   import FiltersSide            from '../../components/FiltersSide.vue'
   import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
@@ -46,8 +27,7 @@
   export default {
     name: 'PhotosYear',
     components: {
-      SearchInputSecondary,
-      NavBarSecondary,
+      ITMHeaderIndex,
       ImagesList,
       FiltersSide,
       ModalAddPhoto

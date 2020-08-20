@@ -23,6 +23,12 @@ module.exports = {
       template: 'public/index.html',
       title: 'Photos par année',
       chunks: ['chunk-vendors', 'chunk-common', 'photos_year']
+    },
+    'videos': {
+      entry: './src/pages/VideosIndex/main.js',
+      template: 'public/index.html',
+      title: 'Videos',
+      chunks: ['chunk-vendors', 'chunk-common', 'videos']
     }
   }
 }
