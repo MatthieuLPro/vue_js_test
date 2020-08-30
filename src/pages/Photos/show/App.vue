@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <b-container fluid>
-      <ITMHeaderIndex/>
+      <ITMHeaderIndex :currentPage='currentPage' />
       <b-row>
         <b-col cols='10' md='12' lg='10'>
-          <h1>Il y a 15 photos pour l'année 1931</h1>
+          <h1 v-if="currentPage === 'date'">Il y a {Dynamic value} photos pour l'année {Dynamic date}</h1>
+          <h1 v-if="currentPage === 'place'">Il y a {Dynamic value} photos concernant {Dynamic place}</h1>
+          <h1 v-if="currentPage === 'person'">Il y a {Dynamic value} photos concernant {Dynamic person}</h1>
         </b-col>
         <b-col cols='8' offset='1' md='6' lg='8' offset-lg='1'>
           <ImagesList :currentItems='filteredItems' />
         </b-col>
         <b-col cols='2' md='4' lg='2'>
-          <FiltersSide @clicked="onClickUpdateFilters"/>
+          <FiltersSide @clicked="onClickUpdateFilters" :filtersList="filtersOptions"/>
         </b-col>
       </b-row>
     </b-container>
@@ -24,16 +26,50 @@
   import FiltersSide            from '../../../components/FiltersSide.vue'
   import ModalAddPhoto          from '../../../components/ModalAddPhoto.vue'
 
+  /* *** */
+  /* Need to make php request */
+  /* With following info: -place, -year, -people */
+  /* default value for each is 'all' */
+  /* *** */
+
   export default {
-    name: 'PhotosYear',
+    name: 'PhotosShow',
     components: {
       ITMHeaderIndex,
       ImagesList,
       FiltersSide,
       ModalAddPhoto
     },
+    props: {
+      place: {
+        type: String,
+        default: 'all'
+      },
+      year: {
+        type: Number,
+        default: 0
+      },
+      people: {
+        type: String,
+        default: 'all'
+      }
+    },
+    created: function () {
+      const url     = window.location.href.split('?')[1];
+      const type    = url.split('=')[1];
+      const result  = this.filtersOptions;
+      const length  = this.filtersOptions.length;
+      for(let i = 0; i < length; i++) {
+        if (this.filtersOptions[i] === type) {
+          result.splice(i, 1);
+        }
+      }
+      this.filtersOptions = result;
+      this.currentPage = type;
+    },
     data() {
       return {
+        filtersOptions: ['date', 'place', 'person'],
         currentFilters: [
           {
             type: 'person',
@@ -44,96 +80,112 @@
             value: []
           }
         ],
+        currentPage: 'date',
         allItems: [
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/237/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1988
           },
           {
             title: 'Vue depuis la Trump Tower.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/238/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1974
           },
           {
             title: 'Une super plante.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/239/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1963
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Tokyo (1931)",
             src: 'https://picsum.photos/id/240/400/400',
-            place: 'tokyo'
+            place: 'tokyo',
+            year: 1945
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/241/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/242/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/243/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/244/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/247/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/248/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/249/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/250/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/251/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/252/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/253/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           }
         ],
         filteredItems: [
@@ -141,91 +193,106 @@
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/237/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'Vue depuis la Trump Tower.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/238/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           },
           {
             title: 'Une super plante.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/239/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Tokyo (1931)",
             src: 'https://picsum.photos/id/240/400/400',
-            place: 'tokyo'
+            place: 'tokyo',
+            year: 1945
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/241/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/242/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/243/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/244/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/247/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/248/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/249/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/250/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Helsinki (1931)",
             src: 'https://picsum.photos/id/251/400/400',
-            place: 'helsinki'
+            place: 'helsinki',
+            year: 1960
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Paris (1931)",
             src: 'https://picsum.photos/id/252/400/400',
-            place: 'paris'
+            place: 'paris',
+            year: 1980
           },
           {
             title: 'John Jacks le chien de Paula.',
             description: "A Mexico city (1931)",
             src: 'https://picsum.photos/id/253/400/400',
-            place: 'mexico_city'
+            place: 'mexico_city',
+            year: 1975
           }
         ]
       };

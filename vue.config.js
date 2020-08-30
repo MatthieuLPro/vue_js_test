@@ -18,11 +18,11 @@ module.exports = {
       title: 'Photos',
       chunks: ['chunk-vendors', 'chunk-common', 'photos']
     },
-    'photos_year': {
-      entry: './src/pages/Photos/year/main.js',
+    'photos/show': {
+      entry: './src/pages/Photos/show/main.js',
       template: 'public/index.html',
-      title: 'Photos par année',
-      chunks: ['chunk-vendors', 'chunk-common', 'photos/year']
+      title: 'Photos par filtres',
+      chunks: ['chunk-vendors', 'chunk-common', 'photos/show']
     },
     'videos': {
       entry: './src/pages/Videos/index/main.js',
