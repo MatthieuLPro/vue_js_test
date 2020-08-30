@@ -11,7 +11,7 @@
         </b-button>
     </b-button-group>
     <!-- Need to change -->
-    <b-button href="/photos_year.html" variant="info">Par année exemple</b-button>
+    <b-button href="/photos/year.html" variant="info">Par année exemple</b-button>
     <b-button variant="info" v-b-modal.modal-1>+</b-button>
   </div>
 </template>

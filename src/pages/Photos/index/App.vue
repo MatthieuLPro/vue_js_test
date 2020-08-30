@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  import ITMHeaderIndex         from '../../components/ITMHeaderIndex.vue'
-  import GroupButtons           from '../../components/GroupButtons.vue'
-  import ObjectTable            from '../../components/ObjectTable.vue'
-  import ActionCards            from '../../components/ActionCards.vue'
-  import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
+  import ITMHeaderIndex         from '../../../components/ITMHeaderIndex.vue'
+  import GroupButtons           from '../../../components/GroupButtons.vue'
+  import ObjectTable            from '../../../components/ObjectTable.vue'
+  import ActionCards            from '../../../components/ActionCards.vue'
+  import ModalAddPhoto          from '../../../components/ModalAddPhoto.vue'
 
   export default {
     name: 'PhotosIndex',

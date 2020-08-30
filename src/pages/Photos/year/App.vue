@@ -19,10 +19,10 @@
 </template>
 
 <script>
-  import ITMHeaderIndex         from '../../components/ITMHeaderIndex.vue'
-  import ImagesList             from '../../components/ImagesList.vue'
-  import FiltersSide            from '../../components/FiltersSide.vue'
-  import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
+  import ITMHeaderIndex         from '../../../components/ITMHeaderIndex.vue'
+  import ImagesList             from '../../../components/ImagesList.vue'
+  import FiltersSide            from '../../../components/FiltersSide.vue'
+  import ModalAddPhoto          from '../../../components/ModalAddPhoto.vue'
 
   export default {
     name: 'PhotosYear',
