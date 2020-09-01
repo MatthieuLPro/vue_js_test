@@ -11,9 +11,9 @@
         </b-button>
     </b-button-group>
     <!-- Need to change -->
-    <b-button href="/photos/show?type=date" variant="info">Par année exemple</b-button>
-    <b-button href="/photos/show?type=place" variant="info">Par lieu exemple</b-button>
-    <b-button href="/photos/show?type=person" variant="info">Par personne exemple</b-button>
+    <b-button href="/photos/show?type=date?info=1975" variant="info">Par année exemple</b-button>
+    <b-button href="/photos/show?type=place?info=mexico_city" variant="info">Par lieu exemple</b-button>
+    <b-button href="/photos/show?type=person?info=jack" variant="info">Par personne exemple</b-button>
     <b-button variant="info" v-b-modal.modal-1>+</b-button>
   </div>
 </template>

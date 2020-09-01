@@ -3,13 +3,11 @@
     <b-table striped hover
       :items="updateItems"
       :fields="updateFields">
+      <template v-slot:cell(filters)="row">
+        {{row['item'][row['item']['action']]['label']}}
+      </template>
       <template v-slot:cell(actions)="row">
-        <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
-          Voir les photos
-        </b-button>
-        <!--<b-button size="sm" @click="row.toggleDetails">
-          {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
-        </b-button>-->
+        <b-button :href="'/photos/show?type=' + row['item']['action'] + '?info=' + row['item'][row['item']['action']]['value']" size="sm" class="mr-1">Voir les photos</b-button>
       </template>
     </b-table>
   </div>
