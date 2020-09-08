@@ -44,13 +44,13 @@
         fields: [
           { key: 'filters', label: 'Date', sortable: true },
           { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-          { key: 'actions', label: 'MyAction' }
+          { key: 'types', label: 'Voir les photos' }
         ],
         items: [
-          { filter: {label: '1931', value: 1931}, nb_image: 1, action: 'date' },
-          { filter: {label: '1984', value: 1984}, nb_image: 24, action: 'date' },
-          { filter: {label: '2011', value: 2011}, nb_image: 51, action: 'date' },
-          { filter: {label: '2020', value: 2020}, nb_image: 74, action: 'date' }
+          { filter: {label: '1931', value: 1931}, nb_image: 1, type: 'date' },
+          { filter: {label: '1984', value: 1984}, nb_image: 24, type: 'date' },
+          { filter: {label: '2011', value: 2011}, nb_image: 51, type: 'date' },
+          { filter: {label: '2020', value: 2020}, nb_image: 74, type: 'date' }
         ],
         lastItems: [
           {
@@ -111,37 +111,37 @@
           this.fields = [
             { key: 'filters', label: 'Date', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'actions', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { filter: {label: '1931', value: 1931}, nb_image: 1, action: 'date' },
-            { filter: {label: '1984', value: 1984}, nb_image: 24, action: 'date' },
-            { filter: {label: '2011', value: 2011}, nb_image: 51, action: 'date' },
-            { filter: {label: '2020', value: 2020}, nb_image: 74, action: 'date' }
+            { filter: {label: '1931', value: 1931}, nb_image: 1, type: 'date' },
+            { filter: {label: '1984', value: 1984}, nb_image: 24, type: 'date' },
+            { filter: {label: '2011', value: 2011}, nb_image: 51, type: 'date' },
+            { filter: {label: '2020', value: 2020}, nb_image: 74, type: 'date' }
           ];
         } else if (this.currentButton == 'place') {
           this.fields = [
             { key: 'filters', label: 'Lieu', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'actions', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { filter: {label: 'Alger', value: 'alger'}, nb_image: 121, action: 'place' },
-            { filter: {label: 'Londres', value: 'londres'}, nb_image: 224, action: 'place' },
-            { filter: {label: 'Paris', value: 'paris'}, nb_image: 23, action: 'place' },
-            { filter: {label: 'Toulouse', value: 'toulouse'}, nb_image: 34, action: 'place' }
+            { filter: {label: 'Alger', value: 'alger'}, nb_image: 121, type: 'place' },
+            { filter: {label: 'Londres', value: 'londres'}, nb_image: 224, type: 'place' },
+            { filter: {label: 'Paris', value: 'paris'}, nb_image: 23, type: 'place' },
+            { filter: {label: 'Toulouse', value: 'toulouse'}, nb_image: 34, type: 'place' }
           ];
         } else if (this.currentButton == 'person') {
           this.fields = [
             { key: 'filters', label: 'Personne', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'actions', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { filter: {label: 'Jean-françois Foubert', value: 'jean_francois_foubert'}, nb_image: 15, action: 'person' },
-            { filter: {label: 'Marie-Pierre Lu', value: 'marie_pierre_lu'},       nb_image: 12, action: 'person' },
-            { filter: {label: 'Dominique Godfrey', value: 'dominique_godfrey'},     nb_image: 24, action: 'person' },
-            { filter: {label: 'Véronique Marcorelle', value: 'veronique_marcorelle'},  nb_image: 22, action: 'person' }
+            { filter: {label: 'Jean-françois Foubert', value: 'jean_francois_foubert'}, nb_image: 15, type: 'person' },
+            { filter: {label: 'Marie-Pierre Lu', value: 'marie_pierre_lu'},       nb_image: 12, type: 'person' },
+            { filter: {label: 'Dominique Godfrey', value: 'dominique_godfrey'},     nb_image: 24, type: 'person' },
+            { filter: {label: 'Véronique Marcorelle', value: 'veronique_marcorelle'},  nb_image: 22, type: 'person' }
           ];
         }
       }

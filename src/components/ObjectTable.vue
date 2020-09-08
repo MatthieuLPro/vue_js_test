@@ -4,10 +4,10 @@
       :items="updateItems"
       :fields="updateFields">
       <template v-slot:cell(filters)="row">
-        {{row['item'][row['item']['action']]['label']}}
+        {{row['item']['filter']['label']}}
       </template>
-      <template v-slot:cell(actions)="row">
-        <b-button :href="'/photos/show?type=' + row['item']['action'] + '?info=' + row['item'][row['item']['action']]['value']" size="sm" class="mr-1">Voir les photos</b-button>
+      <template v-slot:cell(types)="row">
+        <b-button :href="'/photos/show?type=' + row['item']['type'] + '?info=' + row['item']['filter']['value']" size="sm" class="mr-1">Voir les photos</b-button>
       </template>
     </b-table>
   </div>
