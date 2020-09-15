@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <b-container fluid>
-      <ITMHeaderIndex :currentPage="currentPage"/>
+      <ITMHeaderIndex :currentPage="currentPage" />
       <b-row>
-        <b-col cols='6' offset='1'>
+        <b-col cols='12' md='12' lg='6' offset-lg='1'>
           <GroupButtons @clicked="onClickButtonList" :currentFilter='currentButton' :listButtons='buttons' />
           <ObjectTable :currentField='fields' :currentItems='items' />
         </b-col>
-        <b-col cols='4'>
+        <b-col cols='12' md='12' lg='4'>
           <ActionCards :currentItems='lastItems' :currentItemsToShow='lastItems.slice(0, 4)' />
         </b-col>
       </b-row>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  import ITMHeaderIndex         from '../../../components/ITMHeaderIndex.vue'
-  import GroupButtons           from '../../../components/GroupButtons.vue'
-  import ObjectTable            from '../../../components/ObjectTable.vue'
-  import ActionCards            from '../../../components/ActionCards.vue'
-  import ModalAddPhoto          from '../../../components/ModalAddPhoto.vue'
+  import ITMHeaderIndex         from '../../components/ITMHeaderIndex.vue'
+  import GroupButtons           from '../../components/GroupButtons.vue'
+  import ObjectTable            from '../../components/ObjectTable.vue'
+  import ActionCards            from '../../components/ActionCards.vue'
+  import ModalAddPhoto          from '../../components/ModalAddPhoto.vue'
 
   export default {
     name: 'PhotosIndex',
@@ -34,7 +34,7 @@
     },
     data() {
       return {
-        currentPage: 'video',
+        currentPage: 'photo',
         buttons: [
           { key: 'year', label: 'Par année', state: true },
           { key: 'place', label: 'Par lieu', state: false },
@@ -42,15 +42,15 @@
         ],
         currentButton: 'year',
         fields: [
-          { key: 'date', label: 'Date', sortable: true },
+          { key: 'filters', label: 'Date', sortable: true },
           { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-          { key: 'actions', label: 'MyAction' }
+          { key: 'types', label: 'Voir les photos' }
         ],
         items: [
-          { date: 1931, nb_image: 1, action: 'act_1931' },
-          { date: 1984, nb_image: 24, action: 'act_1984' },
-          { date: 2011, nb_image: 51, action: 'act_2011' },
-          { date: 2020, nb_image: 74, action: 'act_2020' }
+          { filter: {label: '1931', value: 1931}, nb_image: 1, type: 'date' },
+          { filter: {label: '1984', value: 1984}, nb_image: 24, type: 'date' },
+          { filter: {label: '2011', value: 2011}, nb_image: 51, type: 'date' },
+          { filter: {label: '2020', value: 2020}, nb_image: 74, type: 'date' }
         ],
         lastItems: [
           {
@@ -109,39 +109,39 @@
         this.currentButton = newKey;
         if (this.currentButton == 'year') {
           this.fields = [
-            { key: 'date', label: 'Date', sortable: true },
+            { key: 'filters', label: 'Date', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'action', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { date: 1931, nb_image: 1, action: 'act_1931' },
-            { date: 1984, nb_image: 24, action: 'act_1984' },
-            { date: 2011, nb_image: 51, action: 'act_2011' },
-            { date: 2020, nb_image: 74, action: 'act_2020' }
+            { filter: {label: '1931', value: 1931}, nb_image: 1, type: 'date' },
+            { filter: {label: '1984', value: 1984}, nb_image: 24, type: 'date' },
+            { filter: {label: '2011', value: 2011}, nb_image: 51, type: 'date' },
+            { filter: {label: '2020', value: 2020}, nb_image: 74, type: 'date' }
           ];
         } else if (this.currentButton == 'place') {
           this.fields = [
-            { key: 'place', label: 'Lieu', sortable: true },
+            { key: 'filters', label: 'Lieu', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'action', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { place: 'Alger', nb_image: 121 },
-            { place: 'Londre', nb_image: 224 },
-            { place: 'Paris', nb_image: 23 },
-            { place: 'Toulouse', nb_image: 34 }
+            { filter: {label: 'Alger', value: 'alger'}, nb_image: 121, type: 'place' },
+            { filter: {label: 'Londres', value: 'londres'}, nb_image: 224, type: 'place' },
+            { filter: {label: 'Paris', value: 'paris'}, nb_image: 23, type: 'place' },
+            { filter: {label: 'Toulouse', value: 'toulouse'}, nb_image: 34, type: 'place' }
           ];
         } else if (this.currentButton == 'person') {
           this.fields = [
-            { key: 'person', label: 'Personne', sortable: true },
+            { key: 'filters', label: 'Personne', sortable: true },
             { key: 'nb_image', label: 'Nombre de photo', sortable: true },
-            { key: 'action', label: 'MyAction' }
+            { key: 'types', label: 'Voir les photos' }
           ];
           this.items = [
-            { person: 'Jean-françois Foubert', nb_image: 15 },
-            { person: 'Marie-Pierre Lu',       nb_image: 12 },
-            { person: 'Dominique Godfrey',     nb_image: 24 },
-            { person: 'Véronique Marcorelle',  nb_image: 22 }
+            { filter: {label: 'Jean-françois Foubert', value: 'jean_francois_foubert'}, nb_image: 15, type: 'person' },
+            { filter: {label: 'Marie-Pierre Lu', value: 'marie_pierre_lu'},       nb_image: 12, type: 'person' },
+            { filter: {label: 'Dominique Godfrey', value: 'dominique_godfrey'},     nb_image: 24, type: 'person' },
+            { filter: {label: 'Véronique Marcorelle', value: 'veronique_marcorelle'},  nb_image: 22, type: 'person' }
           ];
         }
       }

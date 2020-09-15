@@ -13,19 +13,19 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'about']
     },
     'photos': {
-      entry: './src/pages/Photos/index/main.js',
+      entry: './src/pages/Photos_index/main.js',
       template: 'public/index.html',
       title: 'Photos',
       chunks: ['chunk-vendors', 'chunk-common', 'photos']
     },
     'photos/show': {
-      entry: './src/pages/Photos/show/main.js',
+      entry: './src/pages/Photos_show/main.js',
       template: 'public/index.html',
       title: 'Photos par filtres',
       chunks: ['chunk-vendors', 'chunk-common', 'photos/show']
     },
     'videos': {
-      entry: './src/pages/Videos/index/main.js',
+      entry: './src/pages/Videos/main.js',
       template: 'public/index.html',
       title: 'Videos',
       chunks: ['chunk-vendors', 'chunk-common', 'videos']
